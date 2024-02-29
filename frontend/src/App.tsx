@@ -1,6 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './logo.svg':
 import './App.css';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Home from "./Home/Home";
+import Products from "./Products/Products";
+
 
 function App() {
   const openMenu = () => {
@@ -10,21 +14,32 @@ function App() {
     document.querySelector(".sidebar")?.classList.remove("open")
   }
   return (
+    /**
+      <main className = "main">
+        <Routes>
+          <Route path = "/" element = {<Home />} />
+          <Route path = "/catalog" element = {<Products />} />
+        </Routes>
+      </main> /** */
+    <Router>
     <div className="grid-container">
+      <link rel = "stylesheet" href ="style.css" />
+      <title> Green General </title>
+      <body>
         <header className="header">
                 <div className = "brand">
                 <button onClick = {openMenu}>&#9776</button>
                  <a href="index.html"> Project Green General</a>
         </div>
         <div className = "header-links">
-            <a href = "cart.html">Cart</a>
-            <a href = "signin.html">Sign In</a>
+            <Link to = "/">Home</Link>
+            <Link to = "/catalog">Catalog</Link>
         </div>
 </header>
-<head>
+ <head>
 <link rel='stylesheet' href="style.css"> </link>
 <title> Green General </title>
-</head>
+</head> 
 <body>
   <div>
   <header>
@@ -103,7 +118,9 @@ function App() {
         </footer>
     </div>
 </body>
+</body>
 </div>
+</Router>
   );
 }
 
