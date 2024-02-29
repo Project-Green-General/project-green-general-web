@@ -1,9 +1,10 @@
 import React from 'react';
-import logo from './logo.svg':
+import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from "./Home/Home";
 import Products from "./Products/Products";
+import Product from './Products/Products';
 
 
 function App() {
@@ -14,13 +15,15 @@ function App() {
     document.querySelector(".sidebar")?.classList.remove("open")
   }
   return (
-    /**
+    <div>
       <main className = "main">
         <Routes>
           <Route path = "/" element = {<Home />} />
           <Route path = "/catalog" element = {<Products />} />
+          <Route path = "orders" element = {<Orders />}></Route>
+          <Route path ="/order/:id" element={<OrderDeatil />}></Route>
         </Routes>
-      </main> /** */
+      </main>
     <Router>
     <div className="grid-container">
       <link rel = "stylesheet" href ="style.css" />
@@ -34,6 +37,7 @@ function App() {
         <div className = "header-links">
             <Link to = "/">Home</Link>
             <Link to = "/catalog">Catalog</Link>
+            <Link to = "/orders">Orders</Link>
         </div>
 </header>
  <head>
@@ -121,7 +125,8 @@ function App() {
 </body>
 </div>
 </Router>
+</div>
   );
-}
 
-export default App;
+export default App; 
+}
