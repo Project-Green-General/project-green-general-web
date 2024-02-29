@@ -22,6 +22,25 @@ function Order() {
                             <th>DELIVERED AT</th>
                             <th>ACTIONS</th>
                         </tr>
+                        <tbody>
+                            {data.orders.map((order) => (
+                                <tr key={order._id}>
+                                    <td>{order._id}</td>
+                                    <td>{order.createdAt}</td>
+                                    <td>{order.totalPrice}</td>
+                                    <td>{order.user.name}</td>
+                                    <td>{order.isPaid}</td>
+                                    <td>{order.paidAt}</td>
+                                    <td>{order.isDelivered.toString()}</td>
+                                    <td>{order.deliverableData}</td>
+                                    <td>
+                                        <Link to={"/order/" + order._id} className="nutton secondary">
+                                            Details
+                                        </Link>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
                     </thread>
 
                 </table>

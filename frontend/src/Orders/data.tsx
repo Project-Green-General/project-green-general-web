@@ -26,7 +26,7 @@ export default {
     {
         _id: 3,
         createAt: '02/20/2021',
-        totalPrice: 42,90,
+        totalPrice: 42.90,
         user: {
             name: 'Sanjay'
         },
